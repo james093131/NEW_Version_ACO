@@ -33,7 +33,7 @@ class ACO{
         d1d EACH_RUN_FIT; 
         i2d ALL_RUN_BEST_PATH;
         i1d RUN_BEST_PATH;
-        void RUN_ACO_PR(int ant,char *F,double alpha ,double beta,double decline,int iteration,int run)
+        void RUN_ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration,int run)
         {
             int i=0;
             EACH_RUN_FIT.resize(run);
@@ -64,7 +64,7 @@ class ACO{
         double EACH_RUN_BEST_FIT ;
 
     private:
-        void ACO_PR(int ant,char *F,double alpha ,double beta,double decline,int iteration)
+        void ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration)
         {
             
             ini(ant,F);
@@ -85,7 +85,7 @@ class ACO{
                 ITER++;
             }
         }
-        int* read(int &sum,char *F){//讀檔
+        int* read(int &sum,const char *F){//讀檔
 
             fstream file;
             int ind=0;
@@ -154,7 +154,7 @@ class ACO{
                 cout<<endl;
             }
         }
-        void ini(int ant,char *F)
+        void ini(int ant,const char *F)
         {
             int *a;
             int templen;
