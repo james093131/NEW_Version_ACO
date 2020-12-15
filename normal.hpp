@@ -36,18 +36,22 @@ class ACO{
         void RUN_ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration,int run)
         {
             int i=0;
+            double START;
+            double END;
             EACH_RUN_FIT.resize(run);
+            START = clock();
             while(i<run)
             {
                 ACO_PR(ant,F,alpha,beta,decline,iteration);
                 EACH_RUN_FIT[i] = EACH_RUN_BEST_FIT; 
                 ALL_RUN_BEST_PATH.push_back(EACH_RUN_BEST_PATH);
-                cout<<i+1<<' '<<EACH_RUN_FIT[i]<<endl;
+                cout<<"RUN"<<i+1<<' '<<EACH_RUN_FIT[i]<<endl;
                 i++;
             }
+            END = clock();
             int ind = -1;
             double AVG_FIT = HANDLE_RUN(run,ind);
-            finaloutput(ant,run,iteration,alpha,beta,decline,AVG_FIT,ind);
+            finaloutput(ant,run,iteration,alpha,beta,decline,AVG_FIT,ind,START,END);
         }
     
     private:
@@ -90,7 +94,7 @@ class ACO{
             fstream file;
             int ind=0;
             file.open(F,ios::in);
-            int* temp=new int[4096];
+            int* temp=new int[8192];
             while(file)
             {
                 file>>temp[ind];
@@ -169,7 +173,7 @@ class ACO{
             Phermone_Table.assign(city.size(), d1d(city.size(),initial_pher));
             ANT_PATH.assign(ant,i1d(city.size()+1,0));
             Ant_Fitness.resize(ant);
-            EACH_RUN_BEST_FIT = 100000;
+            EACH_RUN_BEST_FIT = 10000000;
             EACH_RUN_BEST_PATH.resize(city.size()+1);
         }    
         void evaluate()//評估所有螞蟻適應度
@@ -308,7 +312,7 @@ class ACO{
             RUN_BEST_PATH.assign(ALL_RUN_BEST_PATH[ind].begin(),ALL_RUN_BEST_PATH[ind].end());
             return sum;
         }
-        void finaloutput(int ant,int run,int iteration,double alpha,double beta,double decline,double AVG_FIT,int ind)
+        void finaloutput(int ant,int run,int iteration,double alpha,double beta,double decline,double AVG_FIT,int ind,double START,double END)
         {   
             fstream file;//寫檔
 	        file.open("PR_ACO.txt",ios::app);
@@ -318,13 +322,17 @@ class ACO{
             file<<"Beta : "<<beta<<endl;
             file<<"Decline : "<<decline<<endl;
             file<<"Run :"<<run<<endl;
+            file<<"Execution Time :"<<(END - START) / CLOCKS_PER_SEC<<"(s)"<<endl;
             file<<"Average Optimum : "<<AVG_FIT<<endl;
             file<<"Best Optimum : "<<EACH_RUN_FIT[ind]<<endl;
             file<<"Best Path : "<<endl;
+            
             for(int i=0;i<RUN_BEST_PATH.size();i++)
             {
                 file<<RUN_BEST_PATH[i]<<' ';
             }
             file<<endl<<endl;
+            cout<<"Average Optimum : "<<AVG_FIT<<endl;
+            cout<<"Execution Time :"<<(END - START) / CLOCKS_PER_SEC<<"(s)"<<endl;
         }
 };
