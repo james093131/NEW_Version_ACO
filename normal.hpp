@@ -1,7 +1,8 @@
 #define dim 3
 #define initial_pher 0.000167
 #define Q 120.0
-#define PR_NUM 10
+#define PR_NUM 50
+#define PR_LOCK_LIMIT 50
 
 
 #include<stdio.h>
@@ -69,6 +70,7 @@ class ACO{
         i2d PR_TABLE;
         double EACH_RUN_BEST_FIT ;
         i2d PR_LOCK;
+        int PR_LOCK_QUAN;
 
     private:
         void ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration)
@@ -180,6 +182,7 @@ class ACO{
             Ant_Fitness.resize(ant);
             EACH_RUN_BEST_FIT = 10000000;
             EACH_RUN_BEST_PATH.resize(city.size()+1);
+            PR_LOCK_QUAN = 0;
         }    
         void evaluate()//評估所有螞蟻適應度
         {
@@ -220,12 +223,13 @@ class ACO{
                         }
                     }
                     PR_TABLE[k][y] ++;
-                    if(PR_TABLE[k][y] == PR_NUM*ant)
+                    if(PR_TABLE[k][y] == PR_NUM*ant && PR_LOCK_QUAN < PR_LOCK_LIMIT)
                     {
                         i1d arr;
                         arr.push_back(k);
                         arr.push_back(y);
                         PR_LOCK.push_back(arr);
+                        PR_LOCK_QUAN ++;
                     }
                    
                 }
