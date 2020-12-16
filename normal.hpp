@@ -1,6 +1,7 @@
 #define dim 3
 #define initial_pher 0.000167
 #define Q 120.0
+#define PR_NUM 10
 
 
 #include<stdio.h>
@@ -65,7 +66,9 @@ class ACO{
         i2d ANT_PATH;
         d1d Ant_Fitness;
         i1d EACH_RUN_BEST_PATH;
+        i2d PR_TABLE;
         double EACH_RUN_BEST_FIT ;
+        i2d PR_LOCK;
 
     private:
         void ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration)
@@ -77,17 +80,18 @@ class ACO{
             {
                 Transition(ant,alpha,beta);
                 evaluate();
-                phermoneupdate(decline);
+                phermoneupdate(ant,decline);
                 cout<<ITER<<' '<<EACH_RUN_BEST_FIT<<endl;
                 if(EACH_RUN_BEST_FIT > Best_Fitness)
                 {
                     EACH_RUN_BEST_FIT = Best_Fitness;
                     EACH_RUN_BEST_PATH.assign(ANT_PATH[Best_ANT].begin(),ANT_PATH[Best_ANT].end());
-                    BEST_phermoneupdate(EACH_RUN_BEST_PATH,EACH_RUN_BEST_FIT,decline);
+                    BEST_phermoneupdate(EACH_RUN_BEST_PATH,EACH_RUN_BEST_FIT,decline);//更新最佳的螞蟻費洛蒙
                 }
-                BEST_phermoneupdate(ANT_PATH[Best_ANT],Best_Fitness,decline);
+                BEST_phermoneupdate(ANT_PATH[Best_ANT],Best_Fitness,decline);//更新當前iteration最佳的螞蟻費洛蒙
                 ITER++;
             }
+            print(PR_LOCK);
         }
         int* read(int &sum,const char *F){//讀檔
 
@@ -171,6 +175,7 @@ class ACO{
             distancecal(len); //製作距離表
             Lock_Table.assign(city.size(), i1d(city.size(), 0));
             Phermone_Table.assign(city.size(), d1d(city.size(),initial_pher));
+            PR_TABLE.assign(city.size(), i1d(city.size(),0));
             ANT_PATH.assign(ant,i1d(city.size()+1,0));
             Ant_Fitness.resize(ant);
             EACH_RUN_BEST_FIT = 10000000;
@@ -198,7 +203,7 @@ class ACO{
             }
 
         }
-        void phermoneupdate(double decline){
+        void phermoneupdate(int ant,double decline){
             for(int i=0;i<ANT_PATH.size();i++)
             {
                 for(int j=0;j<ANT_PATH[i].size()-1;j++)
@@ -213,6 +218,14 @@ class ACO{
                             Phermone_Table[k][y] = initial_pher;
                             Phermone_Table[y][k] = initial_pher;
                         }
+                    }
+                    PR_TABLE[k][y] ++;
+                    if(PR_TABLE[k][y] == PR_NUM*ant)
+                    {
+                        i1d arr;
+                        arr.push_back(k);
+                        arr.push_back(y);
+                        PR_LOCK.push_back(arr);
                     }
                    
                 }

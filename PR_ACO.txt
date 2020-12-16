@@ -114,3 +114,123 @@ Best Optimum : 669.031
 Best Path : 
 1 69 27 101 53 28 26 12 80 68 77 3 79 78 34 81 33 51 9 71 35 65 66 20 30 70 31 88 7 82 48 47 19 11 62 10 90 32 63 64 49 36 46 8 45 17 84 5 60 83 18 52 89 6 94 95 97 92 59 99 96 93 85 98 37 100 91 16 61 86 44 14 38 43 15 57 2 87 42 13 58 40 21 73 72 74 22 41 75 56 39 23 67 25 55 4 54 24 29 76 50 1 
 
+Population : 101
+Iteration : 10
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :0.282804(s)
+Average Optimum : 455.496
+Best Optimum : 455.496
+Best Path : 
+1 32 11 38 16 50 9 49 5 12 46 51 27 48 6 23 7 43 24 14 25 13 41 19 42 40 18 47 4 17 37 44 15 45 33 39 10 30 34 21 29 2 20 35 36 3 28 31 8 26 22 1 
+
+Population : 101
+Iteration : 10
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :0.280936(s)
+Average Optimum : 445.614
+Best Optimum : 445.614
+Best Path : 
+1 22 2 16 50 9 49 5 38 11 32 51 46 12 47 4 17 37 44 15 45 33 39 10 30 34 21 29 20 35 36 3 28 31 26 8 48 23 7 43 24 14 25 13 41 19 40 42 18 6 27 1 
+
+Population : 101
+Iteration : 1
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :0.027994(s)
+Average Optimum : 493.788
+Best Optimum : 493.788
+Best Path : 
+1 32 11 38 16 50 9 34 30 10 49 5 12 47 18 4 17 37 44 15 45 33 39 21 29 2 20 35 36 3 28 31 8 26 48 23 7 43 24 14 25 13 41 19 42 40 51 46 27 6 22 1 
+
+Population : 101
+Iteration : 1
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :0.028032(s)
+Average Optimum : 471.244
+Best Optimum : 471.244
+Best Path : 
+1 32 2 16 50 9 49 38 5 12 47 18 4 17 37 15 45 33 10 39 30 34 21 29 20 35 36 3 28 31 8 26 7 23 43 24 14 25 13 41 19 40 42 44 51 46 11 22 27 6 48 1 
+
+Population : 101
+Iteration : 1
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :0.03108(s)
+Average Optimum : 482.559
+Best Optimum : 482.559
+Best Path : 
+1 32 11 38 5 12 47 18 4 17 37 44 15 45 33 39 10 49 9 50 34 30 21 29 2 16 20 35 36 3 28 31 8 26 7 23 43 24 14 25 13 41 19 42 40 6 48 27 46 51 22 1 
+
+Population : 101
+Iteration : 1
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :0.029525(s)
+Average Optimum : 477.291
+Best Optimum : 477.291
+Best Path : 
+1 32 11 38 5 49 9 50 16 2 20 3 28 31 26 8 48 23 7 43 24 14 25 13 41 19 40 42 44 15 45 33 39 10 30 34 21 29 35 36 22 27 51 46 12 47 18 4 17 37 6 1 
+
+Population : 101
+Iteration : 1
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :0.030244(s)
+Average Optimum : 479.149
+Best Optimum : 479.149
+Best Path : 
+1 32 11 38 9 50 16 29 21 34 30 49 10 39 33 45 15 44 37 17 4 18 47 12 5 46 51 27 48 23 7 43 24 14 25 13 41 19 42 40 6 26 8 31 28 3 35 36 20 2 22 1 
+
+Population : 101
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :27.9625(s)
+Average Optimum : 434.879
+Best Optimum : 434.879
+Best Path : 
+1 22 2 16 50 9 49 38 5 12 47 4 18 14 25 13 41 19 40 42 44 17 37 15 45 33 39 10 30 34 21 29 20 35 36 3 28 31 26 8 48 23 7 43 24 6 27 51 46 11 32 1 
+
+Population : 101
+Iteration : 100
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :2.80162(s)
+Average Optimum : 438.398
+Best Optimum : 438.398
+Best Path : 
+1 22 2 16 50 9 49 38 11 32 46 51 47 12 5 37 17 4 18 14 25 13 41 19 40 42 44 15 45 33 39 10 30 34 21 29 20 35 36 3 28 31 26 8 48 23 7 43 24 6 27 1 
+
+Population : 101
+Iteration : 100
+Alpha : 3
+Beta : 9
+Decline : 0.185
+Run :1
+Execution Time :2.81282(s)
+Average Optimum : 439.679
+Best Optimum : 439.679
+Best Path : 
+1 22 2 16 50 9 49 30 34 21 29 20 35 36 3 28 31 26 8 48 23 7 43 24 6 27 51 46 47 12 37 17 4 18 14 25 13 41 19 40 42 44 15 45 33 39 10 5 38 11 32 1 
+
