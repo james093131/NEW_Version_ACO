@@ -338,6 +338,7 @@ class ACO{
             file<<"Alpha : "<<alpha<<endl;
             file<<"Beta : "<<beta<<endl;
             file<<"Decline : "<<decline<<endl;
+            file<<"City size : "<<city.size()<<endl;
             file<<"Run :"<<run<<endl;
             file<<"Execution Time :"<<(END - START) / CLOCKS_PER_SEC<<"(s)"<<endl;
             file<<"Average Optimum : "<<AVG_FIT<<endl;
