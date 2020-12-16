@@ -205,12 +205,16 @@ class ACO{
                 {
                     int k = ANT_PATH[i][j]-1;
                     int y = ANT_PATH[i][j+1]-1;
-                    Phermone_Table[k][y] = Phermone_Table[k][y]*(double)(1-decline)+decline*(double)Q/Ant_Fitness[i];
-                    Phermone_Table[y][k] = Phermone_Table[k][y];
-                    if(Phermone_Table[k][y] < initial_pher){
+                    if(k<y)
+                    {
+                        Phermone_Table[k][y] = Phermone_Table[k][y]*(double)(1-decline)+decline*(double)Q/Ant_Fitness[i];
+                        Phermone_Table[y][k] = Phermone_Table[k][y];
+                        if(Phermone_Table[k][y] < initial_pher){
                             Phermone_Table[k][y] = initial_pher;
                             Phermone_Table[y][k] = initial_pher;
                         }
+                    }
+                   
                 }
                 
             }
