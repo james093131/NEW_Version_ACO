@@ -261,16 +261,43 @@ class ACO{
                 while(j<city.size())
                 {
                     k = solutionconstruct(k,check,alpha,beta);
-                    check[k-1] = 1;
-                    ANT_PATH[i][j] = k ; 
-                    NEW_ANT_FIT += distancetable[ANT_PATH[i][j-1]-1][k-1];
-                    j++;
+                    int C = PR_CHECK(k-1);
+                    if(C != -1 && checkpathornot(check,C,city.size()))
+                    {
+                        check[k-1] = 1;
+                        check[C] = 1;
+                        ANT_PATH[i][j] = k ; 
+                        NEW_ANT_FIT += distancetable[ANT_PATH[i][j-1]-1][k-1];
+                        
+                        ANT_PATH[i][j+1] = C+1 ; 
+                        NEW_ANT_FIT += distancetable[ANT_PATH[i][j]-1][C];
+                        j += 2;
+
+                    }
+                    else{
+                        check[k-1] = 1;
+                        ANT_PATH[i][j] = k ; 
+                        NEW_ANT_FIT += distancetable[ANT_PATH[i][j-1]-1][k-1];
+                        j++;
+                    }
+                    
                 }
                 NEW_ANT_FIT += distancetable[k-1][ini-1];
                 ANT_PATH[i][city.size()] = ANT_PATH[i][0]; 
                 Ant_Fitness[i] = NEW_ANT_FIT;
                 i++;
             }
+        }
+        int PR_CHECK(int k)
+        {
+            for(int i=0;i<PR_LOCK.size();i++)
+            {
+                if(PR_LOCK[i][0] == k)
+                {
+                    return PR_LOCK[i][1];
+                }
+            }
+            return -1;
         }
         bool checkpathornot(i1d arr,int loc,int len){//檢查是否有走過，走過為1沒走過為-1
             if(arr[loc]!=1)
