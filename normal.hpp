@@ -223,7 +223,7 @@ class ACO{
                         }
                     }
                     PR_TABLE[k][y] ++;
-                    if(PR_TABLE[k][y] == PR_NUM*ant && PR_LOCK_QUAN < PR_LOCK_LIMIT*city.size())
+                    if(PR_TABLE[k][y] == PR_NUM*ant && PR_LOCK_QUAN < PR_LOCK_LIMIT*city.size()*2)
                     {
                         i1d arr;
                         arr.push_back(k);
