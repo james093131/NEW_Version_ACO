@@ -183,6 +183,7 @@ class ACO{
             EACH_RUN_BEST_FIT = 10000000;
             EACH_RUN_BEST_PATH.resize(city.size()+1);
             PR_LOCK_QUAN = 0;
+            PR_LOCK.clear();
         }    
         void evaluate()//評估所有螞蟻適應度
         {
