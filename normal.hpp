@@ -2,7 +2,7 @@
 #define initial_pher 0.000167
 #define Q 120.0
 #define PR_NUM 50
-#define PR_LOCK_LIMIT 0.3
+#define PR_LOCK_LIMIT 0.45
 
 
 #include<stdio.h>
