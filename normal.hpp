@@ -2,7 +2,7 @@
 #define initial_pher 0.000167
 #define Q 120.0
 #define PR_NUM 50
-#define PR_LOCK_LIMIT 50
+#define PR_LOCK_LIMIT 0.3
 
 
 #include<stdio.h>
@@ -223,7 +223,7 @@ class ACO{
                         }
                     }
                     PR_TABLE[k][y] ++;
-                    if(PR_TABLE[k][y] == PR_NUM*ant && PR_LOCK_QUAN < PR_LOCK_LIMIT)
+                    if(PR_TABLE[k][y] == PR_NUM*ant && PR_LOCK_QUAN < PR_LOCK_LIMIT*city.size())
                     {
                         i1d arr;
                         arr.push_back(k);
@@ -369,6 +369,7 @@ class ACO{
             file<<"Alpha : "<<alpha<<endl;
             file<<"Beta : "<<beta<<endl;
             file<<"Decline : "<<decline<<endl;
+            file<<"City size : "<<city.size()<<endl;
             file<<"Run :"<<run<<endl;
             file<<"Execution Time :"<<(END - START) / CLOCKS_PER_SEC<<"(s)"<<endl;
             file<<"Average Optimum : "<<AVG_FIT<<endl;
