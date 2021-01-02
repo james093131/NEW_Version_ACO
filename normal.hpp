@@ -1,8 +1,6 @@
 #define dim 3
 #define initial_pher 0.000167
 #define Q 120.0
-#define PR_NUM 50
-#define PR_LOCK_LIMIT 0.45
 
 
 #include<stdio.h>
@@ -35,7 +33,7 @@ class ACO{
         d1d EACH_RUN_FIT; 
         i2d ALL_RUN_BEST_PATH;
         i1d RUN_BEST_PATH;
-        void RUN_ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration,int run)
+        void RUN_ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration,int run,int PR_NUM,double PR_LOCK_LIMIT)
         {
             int i=0;
             double START;
@@ -44,7 +42,7 @@ class ACO{
             START = clock();
             while(i<run)
             {
-                ACO_PR(ant,F,alpha,beta,decline,iteration);
+                ACO_PR(ant,F,alpha,beta,decline,iteration,PR_NUM,PR_LOCK_LIMIT);
                 EACH_RUN_FIT[i] = EACH_RUN_BEST_FIT; 
                 ALL_RUN_BEST_PATH.push_back(EACH_RUN_BEST_PATH);
                 cout<<"RUN"<<i+1<<' '<<EACH_RUN_FIT[i]<<endl;
@@ -53,7 +51,7 @@ class ACO{
             END = clock();
             int ind = -1;
             double AVG_FIT = HANDLE_RUN(run,ind);
-            finaloutput(ant,run,iteration,alpha,beta,decline,AVG_FIT,ind,START,END);
+            finaloutput(ant,run,iteration,alpha,beta,decline,AVG_FIT,ind,START,END,PR_NUM,PR_LOCK_LIMIT);
         }
     
     private:
@@ -73,7 +71,7 @@ class ACO{
         int PR_LOCK_QUAN;
 
     private:
-        void ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration)
+        void ACO_PR(int ant,const char *F,double alpha ,double beta,double decline,int iteration,int PR_NUM,double PR_LOCK_LIMIT)
         {
             
             ini(ant,F);
@@ -82,7 +80,7 @@ class ACO{
             {
                 Transition(ant,alpha,beta);
                 evaluate();
-                phermoneupdate(ant,decline);
+                phermoneupdate(ant,decline,PR_NUM,PR_LOCK_LIMIT);
                 cout<<ITER<<' '<<EACH_RUN_BEST_FIT<<endl;
                 if(EACH_RUN_BEST_FIT > Best_Fitness)
                 {
@@ -207,7 +205,7 @@ class ACO{
             }
 
         }
-        void phermoneupdate(int ant,double decline){
+        void phermoneupdate(int ant,double decline,int PR_NUM,double PR_LOCK_LIMIT){
             for(int i=0;i<ANT_PATH.size();i++)
             {
                 for(int j=0;j<ANT_PATH[i].size()-1;j++)
@@ -361,7 +359,7 @@ class ACO{
             RUN_BEST_PATH.assign(ALL_RUN_BEST_PATH[ind].begin(),ALL_RUN_BEST_PATH[ind].end());
             return sum;
         }
-        void finaloutput(int ant,int run,int iteration,double alpha,double beta,double decline,double AVG_FIT,int ind,double START,double END)
+        void finaloutput(int ant,int run,int iteration,double alpha,double beta,double decline,double AVG_FIT,int ind,double START,double END,int PR_NUM ,double PR_LIMIT_LOCK)
         {   
             fstream file;//寫檔
 	        file.open("PR_ACO.txt",ios::app);
@@ -372,6 +370,8 @@ class ACO{
             file<<"Decline : "<<decline<<endl;
             file<<"City size : "<<city.size()<<endl;
             file<<"Run :"<<run<<endl;
+            file<<"PR_NUM : "<<PR_NUM<<endl;
+            file<<"PR LOCK LIMIT : "<<PR_LIMIT_LOCK*city.size()<<endl;
             file<<"Execution Time :"<<(END - START) / CLOCKS_PER_SEC<<"(s)"<<endl;
             file<<"Average Optimum : "<<AVG_FIT<<endl;
             file<<"Best Optimum : "<<EACH_RUN_FIT[ind]<<endl;
