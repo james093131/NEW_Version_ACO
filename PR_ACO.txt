@@ -386,3 +386,138 @@ Best Optimum : 453.753
 Best Path : 
 1 32 11 38 5 49 9 50 16 2 29 21 34 30 10 39 33 45 15 44 37 17 4 41 19 42 40 13 25 14 6 27 51 46 12 47 18 24 43 7 23 48 8 26 31 28 3 20 35 36 22 1 
 
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 5.1
+Execution Time :389.382(s)
+Average Optimum : 442.714
+Best Optimum : 430.396
+Best Path : 
+1 32 11 2 16 50 9 49 38 5 37 17 4 18 47 12 46 51 27 6 48 23 7 43 24 14 25 13 41 19 40 42 44 15 45 33 39 10 30 34 21 29 20 35 36 3 28 31 26 8 22 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 10.2
+Execution Time :352.343(s)
+Average Optimum : 445.563
+Best Optimum : 434.773
+Best Path : 
+1 32 11 38 9 49 5 37 17 4 18 47 12 46 51 27 6 48 23 7 43 24 14 25 13 41 19 40 42 44 15 45 33 39 10 30 34 50 16 2 29 21 20 35 36 3 28 31 26 8 22 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 15.3
+Execution Time :314.399(s)
+Average Optimum : 446.533
+Best Optimum : 435.616
+Best Path : 
+1 22 2 16 50 9 49 5 38 11 32 46 51 47 12 37 17 4 18 14 25 13 41 19 40 42 44 15 45 33 39 10 30 34 21 29 20 35 36 3 28 31 26 8 48 23 7 43 24 6 27 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 20.4
+Execution Time :296.654(s)
+Average Optimum : 447.129
+Best Optimum : 432.534
+Best Path : 
+1 32 11 38 9 49 5 37 17 4 18 47 12 46 51 27 6 48 23 7 43 24 14 25 13 41 19 40 42 44 15 45 33 10 39 30 34 50 16 21 29 2 20 35 36 3 28 31 26 8 22 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 25.5
+Execution Time :277.334(s)
+Average Optimum : 446.524
+Best Optimum : 438.537
+Best Path : 
+1 22 2 16 50 9 49 5 38 11 32 46 51 27 6 48 23 7 43 24 14 25 18 47 12 37 17 4 13 41 19 40 42 44 15 45 33 10 39 30 34 21 29 20 35 36 3 28 31 26 8 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 30.6
+Execution Time :273.364(s)
+Average Optimum : 447.325
+Best Optimum : 434.773
+Best Path : 
+1 32 11 38 9 49 5 37 17 4 18 47 12 46 51 27 6 48 23 7 43 24 14 25 13 41 19 40 42 44 15 45 33 39 10 30 34 50 16 2 29 21 20 35 36 3 28 31 26 8 22 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 35.7
+Execution Time :270.671(s)
+Average Optimum : 448.743
+Best Optimum : 436.988
+Best Path : 
+1 22 2 16 50 9 49 5 38 11 32 46 51 12 47 4 18 14 25 13 41 19 40 42 44 37 17 15 45 33 39 10 30 34 21 29 20 35 36 3 28 31 26 8 48 23 7 43 24 6 27 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 40.8
+Execution Time :266.142(s)
+Average Optimum : 447.104
+Best Optimum : 432.534
+Best Path : 
+1 32 11 38 9 49 5 37 17 4 18 47 12 46 51 27 6 48 23 7 43 24 14 25 13 41 19 40 42 44 15 45 33 10 39 30 34 50 16 21 29 2 20 35 36 3 28 31 26 8 22 1 
+
+Population : 51
+Iteration : 1000
+Alpha : 3
+Beta : 9
+Decline : 0.185
+City size : 51
+Run :30
+PR_NUM : 50
+PR LOCK LIMIT : 45.9
+Execution Time :274.837(s)
+Average Optimum : 444.671
+Best Optimum : 433.065
+Best Path : 
+1 32 11 38 9 49 5 37 17 4 18 47 12 46 51 27 48 6 23 7 43 24 14 25 13 41 19 40 42 44 15 45 33 39 10 30 34 50 16 21 29 2 20 35 36 3 28 31 26 8 22 1 
+

@@ -1,1 +1,9 @@
-./PR_ACO 51 1000 1 3.0 9.0 0.185 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.1 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.2 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.3 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.4 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.5 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.6 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.7 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.8 readfile.txt 
+./PR_ACO 51 1000 30 3.0 9.0 0.185 50 0.9 readfile.txt 

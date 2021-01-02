@@ -9,7 +9,7 @@
 
   or
   
-  ./PRACO [ants] [iterations] [run] [alpha] [beta] [decline] [readfile] 
+  ./PRACO [ants] [iterations] [run] [alpha] [beta] [decline] [PR_NUM] [PR_LOCK_LIMIT] [readfile] 
 
 
 Using std::vector to do the Ant colony optimization algorithrm and solve TSP problem clearly.
