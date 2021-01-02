@@ -18,7 +18,7 @@ int main(int argc,const char *argv[])
     {
         ACO ACO_PR;
         const char * K = "readfile.txt";
-        ACO_PR.RUN_ACO_PR(51,K,3.0,9.0,0.185,1000,1);
+        ACO_PR.RUN_ACO_PR(51,K,3.0,9.0,0.185,1000,30);
     }    
    
 }
