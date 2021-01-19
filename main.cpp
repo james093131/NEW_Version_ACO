@@ -12,7 +12,7 @@ int main(int argc,const char *argv[])
     double PR_LOCK_LIMIT = atof(argv[8]);
     const char * F = argv[9];
 
-    if (argc > 6)
+    if (argc > 1)
     {
         ACO ACO_PR;
         ACO_PR.RUN_ACO_PR(ant,F,alpha,beta,decline,iteration,run,PR_NUM,PR_LOCK_LIMIT);
